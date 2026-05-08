@@ -2,6 +2,7 @@ import "./globals.css"
 import { Cormorant_Garamond, Nunito } from "next/font/google"
 import Navbar from "@/lib/components/layout/navbar"
 import Footer from "@/lib/components/layout/footer"
+import ScrollReveal from "@/lib/components/layout/scroll-reveal"
 
 const displayFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className={`${displayFont.variable} ${bodyFont.variable} min-h-screen flex flex-col bg-[#fff4f8] font-body text-[#21131a]`}>
         <Navbar />
         <main className="flex-1">{children}</main>
+        <ScrollReveal />
         <Footer />
       </body>
     </html>

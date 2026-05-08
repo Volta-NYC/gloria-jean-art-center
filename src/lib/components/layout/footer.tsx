@@ -28,12 +28,12 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Gloria Jean Community Art Center
           </div>
           <Link
-            href="https://nyc.voltanpo.org"
+            href="https://voltanyc.org"
             target="_blank"
             rel="noreferrer"
-            className="text-pink-300 hover:underline"
+            className="w-fit font-semibold text-[var(--volta-green)] hover:underline"
           >
-            Website made by @VoltaNYC
+            made by volta
           </Link>
         </div>
         <div className="flex flex-wrap gap-3 text-pink-100/70">
