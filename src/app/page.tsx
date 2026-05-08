@@ -3,24 +3,64 @@ import ContactForm from "@/lib/components/forms/contact-form"
 
 const heroStats = [
   "Private events only",
-  "Seated dinner capacity 50",
-  "Standing capacity 75",
+  "Indoor + outdoor space",
+  "$200 holds your date",
 ]
 
-const eventTypes = [
-  "Birthday Parties",
-  "Gender Reveals",
-  "Baby Showers",
-  "Bridal Parties",
-  "Dinner Parties",
-  "Bachelorette Parties",
-  "Photograph Sessions",
-  "Book Signings",
-  "Business Meetings",
-  "Business Warmings",
-  "Brunches",
-  "Memorials",
-  "Repasts and Wakes",
+const venueSpecs = [
+  "1,400 sq ft indoor",
+  "900 sq ft outdoor",
+  "50 seated",
+  "75 standing",
+  "Walk-in entrance",
+  "Kitchen access",
+  "Tables + chairs included",
+  "2 bathrooms",
+]
+
+const perfectForEvents = [
+  {
+    title: "Baby Showers",
+    detail: "A warm setting for family, gifts, food, photos, and decor.",
+  },
+  {
+    title: "Birthday Parties",
+    detail: "Flexible space for kids, adults, dinner setups, music, and guests.",
+  },
+  {
+    title: "Repasts & Wakes",
+    detail: "A private room for gathering, honoring, and supporting loved ones.",
+  },
+  {
+    title: "Gender Reveals",
+    detail: "Room for a reveal moment, backdrop, seating, and celebration.",
+  },
+  {
+    title: "Photo Sessions",
+    detail: "Indoor space and outdoor access for portraits, content, and video.",
+  },
+  {
+    title: "Business Events",
+    detail: "Meetings, workshops, signings, and business warmings.",
+  },
+]
+
+const pricingPreview = [
+  {
+    title: "Private Events",
+    price: "From $1,000",
+    detail: "Sunday 8-hour private event. Friday and Saturday packages available.",
+  },
+  {
+    title: "Business Events",
+    price: "From $150/hr",
+    detail: "Meetings, workshops, and team building for groups of 20 or less.",
+  },
+  {
+    title: "Creative Rentals",
+    price: "From $75/hr",
+    detail: "Photography and videography bookings for groups of 10 or less.",
+  },
 ]
 
 const featuredEvents = [
@@ -83,6 +123,13 @@ const storyHighlights = [
   },
 ]
 
+const decorFeatures = [
+  "Table and decor setup",
+  "Backdrop styling",
+  "Outdoor setup support",
+  "Event layout guidance",
+]
+
 const reviews = [
   {
     quote:
@@ -115,6 +162,39 @@ const reviews = [
   },
 ]
 
+const faqs = [
+  {
+    question: "How many guests can the venue hold?",
+    answer:
+      "Private events must not go over 65 persons. The venue can seat 50 guests for dinner and hold up to 75 standing guests depending on event type.",
+  },
+  {
+    question: "Are tables and chairs included?",
+    answer:
+      "Yes. The venue provides 50 chairs and 8 six-foot rectangle tables.",
+  },
+  {
+    question: "Is setup and cleanup time included?",
+    answer:
+      "Private event packages include setup and cleaning. Hourly private events include 2 hours before to set up and 1 hour after to clean up.",
+  },
+  {
+    question: "How do I hold my event date?",
+    answer:
+      "A $200 non-refundable payment is required to hold an event date. The balance is due 2 weeks before the event.",
+  },
+  {
+    question: "Is there outdoor space?",
+    answer:
+      "Yes. The venue has 900 square feet of private outdoor space with lighting.",
+  },
+  {
+    question: "Is there kitchen access?",
+    answer:
+      "Yes. There is a partial kitchen with a double sink, refrigerator, and microwave.",
+  },
+]
+
 export default function HomePage() {
   return (
     <div>
@@ -135,12 +215,12 @@ export default function HomePage() {
               Private events only
             </div>
             <h1 className="max-w-4xl text-5xl font-black leading-[0.95] text-white sm:text-6xl lg:text-7xl">
-              Our space is warm and inviting.
+              Celebrate beautifully in a warm Brooklyn event space.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-pink-50/85 sm:text-xl">
-              Gloria Jean Community Art Center is a family-owned private event venue
-              for life&apos;s most meaningful moments, from joyful celebrations to
-              intimate gatherings.
+              Gloria Jean Community Art Center is a family-owned private venue
+              for birthdays, baby showers, repasts, photo sessions, business
+              gatherings, and meaningful celebrations with decor support available.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -148,13 +228,13 @@ export default function HomePage() {
                 href="/pages/book"
                 className="rounded-full bg-pink-500 px-6 py-3 text-center text-sm font-black text-white shadow-xl shadow-pink-950/30 transition hover:bg-pink-400"
               >
-                Book an Event
+                Check Availability
               </Link>
               <Link
-                href="#events"
+                href="/pages/prices"
                 className="rounded-full border border-pink-100/40 bg-white/5 px-6 py-3 text-center text-sm font-black text-white backdrop-blur transition hover:bg-white hover:text-[#831843]"
               >
-                View Events
+                View Pricing
               </Link>
             </div>
 
@@ -197,26 +277,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="relative z-10 mx-auto -mt-8 max-w-7xl px-5 md:px-8">
+        <div className="grid overflow-hidden rounded-xl border border-pink-100 bg-white shadow-2xl shadow-pink-950/10 sm:grid-cols-2 lg:grid-cols-4">
+          {venueSpecs.map((spec) => (
+            <div key={spec} className="border-b border-r border-pink-100 px-5 py-4 last:border-r-0 sm:last:border-b lg:border-b-0">
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-[#831843]">
+                {spec}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="events" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
         <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-pink-600">Private events</p>
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-pink-600">Perfect for</p>
             <h2 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
-              Celebrate, gather, honor, and host in one flexible space.
+              The moments people are already searching for.
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-8 text-[#735868]">
-              The venue is designed for private gatherings only, with clear capacity,
-              practical amenities, and room for different event layouts.
+              Make it easy for guests to picture their event here, from joyful
+              celebrations to meaningful family gatherings.
             </p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            {eventTypes.map((event) => (
+            {perfectForEvents.map((event) => (
               <div
-                key={event}
+                key={event.title}
                 className="rounded-lg border border-pink-200/80 bg-white/85 px-5 py-4 text-sm font-bold text-[#2c1721] shadow-sm shadow-pink-900/5 transition hover:-translate-y-0.5 hover:border-pink-300 hover:shadow-md"
               >
-                {event}
+                <h3 className="font-display text-2xl font-bold text-[#831843]">
+                  {event.title}
+                </h3>
+                <p className="mt-2 text-sm font-semibold leading-6 text-[#735868]">
+                  {event.detail}
+                </p>
               </div>
             ))}
           </div>
@@ -238,6 +335,43 @@ export default function HomePage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-pink-600">Pricing preview</p>
+              <h2 className="mt-3 max-w-3xl text-4xl font-black leading-tight md:text-5xl">
+                Know the starting point before you reach out.
+              </h2>
+            </div>
+            <Link
+              href="/pages/prices"
+              className="w-fit rounded-full bg-[#831843] px-5 py-3 text-sm font-black text-white shadow-lg shadow-pink-950/15 transition hover:bg-pink-600"
+            >
+              View Full Pricing
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {pricingPreview.map((item) => (
+              <article key={item.title} className="rounded-xl border border-pink-100 bg-[#fff8fb] p-6 shadow-lg shadow-pink-950/5">
+                <p className="text-sm font-black uppercase tracking-[0.16em] text-pink-500">
+                  {item.title}
+                </p>
+                <div className="mt-4 font-display text-5xl font-bold leading-none text-[#831843]">
+                  {item.price}
+                </div>
+                <p className="mt-4 leading-7 text-[#735868]">{item.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-xl border border-pink-200 bg-pink-50 p-5 text-center font-bold text-[#831843]">
+            A $200 non-refundable payment holds your event date. Balance is due 2 weeks before the event.
+          </div>
         </div>
       </section>
 
@@ -290,6 +424,38 @@ export default function HomePage() {
                 <h3 className="text-2xl font-black">{item.title}</h3>
                 <p className="mt-3 leading-7 text-[#735868]">{item.description}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fff4f8] px-5 py-20 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.95fr_1.05fr] md:items-center">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-pink-600">Events & Decor</p>
+            <h2 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
+              Need help making the room feel finished?
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-[#735868]">
+              The venue is more than four walls. Ask about decor support, table
+              setup, backdrop styling, and layout help so the space feels ready
+              when your guests arrive.
+            </p>
+            <Link
+              href="/#contact"
+              className="mt-8 inline-flex rounded-full bg-pink-600 px-5 py-3 text-sm font-black text-white shadow-lg shadow-pink-950/15 transition hover:bg-pink-700"
+            >
+              Ask About Decor
+            </Link>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {decorFeatures.map((feature) => (
+              <div key={feature} className="rounded-xl border border-pink-100 bg-white p-6 shadow-lg shadow-pink-950/5">
+                <p className="font-display text-2xl font-bold text-[#831843]">
+                  {feature}
+                </p>
+              </div>
             ))}
           </div>
         </div>
@@ -361,12 +527,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-white px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-pink-600">FAQ</p>
+            <h2 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
+              Questions people ask before booking.
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {faqs.map((faq) => (
+              <article key={faq.question} className="rounded-xl border border-pink-100 bg-[#fff8fb] p-6 shadow-sm">
+                <h3 className="font-display text-2xl font-bold text-[#831843]">
+                  {faq.question}
+                </h3>
+                <p className="mt-3 leading-7 text-[#735868]">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="booking" className="bg-gradient-to-r from-[#831843] via-pink-700 to-[#be185d] px-5 py-16 text-white md:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.2em] text-pink-100">Private events only</p>
             <h2 className="mt-3 max-w-3xl text-4xl font-black leading-tight md:text-5xl">
-              Ready to plan your next meaningful moment?
+              Ready to check your date?
             </h2>
             <p className="mt-4 max-w-2xl text-lg leading-8 text-pink-50/85">
               Send your date, guest count, and event type so the team can help you
@@ -378,7 +566,7 @@ export default function HomePage() {
               href="/pages/book"
               className="rounded-full bg-white px-6 py-3 text-center text-sm font-black text-pink-700 shadow-lg shadow-pink-950/20 transition hover:bg-pink-50"
             >
-              Start Booking
+              Start My Event Request
             </Link>
             <Link
               href="#space"
@@ -407,6 +595,23 @@ export default function HomePage() {
           <ContactForm />
         </div>
       </section>
+
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-pink-200 bg-white/95 p-3 shadow-2xl shadow-pink-950/20 backdrop-blur md:hidden">
+        <div className="mx-auto flex max-w-md gap-3">
+          <Link
+            href="/pages/book"
+            className="flex-1 rounded-full bg-pink-600 px-4 py-3 text-center text-sm font-black text-white"
+          >
+            Check Availability
+          </Link>
+          <Link
+            href="/pages/prices"
+            className="flex-1 rounded-full border border-pink-200 px-4 py-3 text-center text-sm font-black text-[#831843]"
+          >
+            Pricing
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

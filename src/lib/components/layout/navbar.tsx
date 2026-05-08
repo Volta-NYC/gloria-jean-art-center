@@ -16,10 +16,10 @@ export default function Navbar() {
               />
             </span>
             <span className="hidden leading-tight sm:block">
-              <span className="block text-base font-black tracking-wide text-[#21131a]">
+              <span className="block font-display text-xl font-bold leading-none text-[#21131a]">
                 Gloria Jean
               </span>
-              <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-pink-600">
+              <span className="block text-[11px] font-extrabold uppercase tracking-[0.22em] text-pink-600">
                 Events & Decor
               </span>
             </span>
@@ -40,7 +40,7 @@ export default function Navbar() {
           href="/pages/book"
           className="rounded-full bg-pink-600 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-pink-900/15 transition hover:bg-pink-700"
         >
-          Book Event
+          Check Availability
         </Link>
       </div>
     </nav>

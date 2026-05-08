@@ -14,7 +14,7 @@ export default function Footer() {
               />
             </span>
             <div>
-              <div className="text-lg font-black">Gloria Jean Community Art Center</div>
+              <div className="font-display text-2xl font-bold leading-none">Gloria Jean Community Art Center</div>
               <div className="text-sm font-semibold uppercase tracking-[0.18em] text-pink-300">
                 Events & Decor
               </div>
@@ -42,7 +42,7 @@ export default function Footer() {
           <Link href="/pages/prices" className="hover:text-white">Prices</Link>
           <Link href="/#reviews" className="hover:text-white">Reviews</Link>
           <Link href="/#contact" className="hover:text-white">Contact</Link>
-          <Link href="/pages/book" className="hover:text-white">Book Event</Link>
+          <Link href="/pages/book" className="hover:text-white">Check Availability</Link>
         </div>
       </div>
     </footer>
