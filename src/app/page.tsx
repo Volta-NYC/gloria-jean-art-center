@@ -107,19 +107,19 @@ const galleryImages = [
 
 const storyHighlights = [
   {
-    title: "Family-owned",
+    title: "Founded in 2019",
     description:
-      "We are a family-owned business sharing our venue with the community and beyond.",
+      "Inspired by a family of business owners, our founder opened Gloria Jean Community Art Center in October 2019 to bring creativity and community to East New York.",
   },
   {
-    title: "Inspired by legacy",
+    title: "Built through resilience",
     description:
-      "It began with our grandparents, and we continue their legacy through a warm, inviting space.",
+      "When COVID-19 hit in 2020, we pivoted — organizing pop-up shops for local vendors and entrepreneurs. What started as survival grew into something much greater.",
   },
   {
-    title: "Personal attention",
+    title: "Loyal since day one",
     description:
-      "Creating memorable experiences is what we love to do, with service that feels personal.",
+      "Many of our clients have been with us since 2020. That continued trust reflects the care, professionalism, and personal service we bring to every event.",
   },
 ]
 
@@ -409,13 +409,19 @@ export default function HomePage() {
           <div>
             <p className="text-sm font-black uppercase tracking-[0.2em] text-pink-600">Our story</p>
             <h2 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
-              Inspired by legacy, built for community.
+              Inspired by family. Built for community.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[#735868]">
-              It all began with our grandparents. We&apos;ve continued their legacy
-              by offering a warm, inviting space for private celebrations of all
-              kinds. Creating memorable experiences is what we love to do.
+              Founded in October 2019 in East New York, Gloria Jean Community Art
+              Center grew from a family legacy of entrepreneurship and a vision
+              for a space where people could gather, celebrate, and feel supported.
             </p>
+            <a
+              href="/pages/about"
+              className="mt-6 inline-flex rounded-full border border-pink-200 bg-white px-5 py-3 text-sm font-black text-[#831843] shadow-sm transition hover:bg-pink-50"
+            >
+              Read our full story
+            </a>
           </div>
 
           <div className="grid gap-5">
